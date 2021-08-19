@@ -1,6 +1,5 @@
 # Mood-Stabilizers
 
-## Group Project: Team Agreement
 
 ## Team Members :
 1. Mohammad Noor Jebreen
