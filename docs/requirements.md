@@ -5,14 +5,16 @@
 What is the vision of this product?
 the vision of our product is to detected mood 
 
+
 What pain point does this project solve? 
 the pain point to try to change the bad mood(anger, disgust,fear, sad)to a good mood(natural, happy)
-
+<br>
+<br>
 
 Why should we care about your product?
  Our product is targeting any people who want to change their mood
-
-
+<br>
+<br>
 Scope (In/Out):
 IN - What will your product do:
 -The app gives the user the ability to open the camera to detect the mood 
@@ -21,8 +23,8 @@ IN - What will your product do:
 
 OUT - What will your product not do.
 Our app will never turn into an IOS or Android app and never use any database. 
-
-
+<br>
+<br>
 Minimum Viable Product vs
 
 What will your MVP functionality be?
@@ -32,8 +34,8 @@ play songs depending on the mood
 What are your stretch goals?
 add videos to change mood
 
-
-
+<br>
+<br>
 Functional Requirements:
 the camera should detect the mood of the user
 suggest songs for the user depend on the mood

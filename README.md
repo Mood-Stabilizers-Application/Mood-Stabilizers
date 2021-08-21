@@ -17,7 +17,7 @@
 
 ## Wire frames
 
-![wire frame](wirefram.png)
+![wire frame](docs/wirefram.png)
 <br>
 
 ## User Stories:
@@ -43,23 +43,30 @@
         Acceptance Test => Make sure the music on display matches the mood
 
 
-## [Software Requirements](requirements.md).
+## [Software Requirements](docs/requirements.md).
 <br>
 <br>
 
 ## Domain Modeling
 
-![Domain Modeling](DomainModeling.jpg)
+![Domain Modeling](docs/DomainModeling.jpg)
 
 ## Database Schema Diagram
 
-| modeId      | mode |
+| moodId      | mood |
 | ----------- | ----------- |
-| id1      | mode1       |
-| id2   | mode2        |
+| id1      | mood       |
+| id2   | mood        |
 
 
 | songId      | song |frequency|
 | ----------- | ----------- |-----|
 | id1      | song1       |number1|
 | id2   | song2        |number2|
+
+
+| pictureId      | picture |category|
+| ----------- | ----------- |-----|
+| id1      | Pic1       |Mood1|
+| id2   | Pic2      |Mood1|
+| id3  | Pic3     |Mood2|
