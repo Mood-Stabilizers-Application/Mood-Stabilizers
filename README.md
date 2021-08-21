@@ -17,7 +17,7 @@
 
 ## Wire frames
 
-![wire frame](Wireframes.PNG)
+![wire frame](wirefram.png)
 <br>
 
 ## User Stories:
