@@ -1,6 +1,20 @@
 # Mood-Stabilizers
 <br>
 
+
+## Team Members :
+1. Mohammad Noor Jebreen
+
+2. Abdelmajed Alabed Alraheem
+
+3. Ahmad Omar A. Shalein
+
+4. laith fayiz abedelrahim hussein
+
+5. yazan ahmad
+   
+<br>
+
 ## Wire frames
 
 ![wire frame](Wireframes.PNG)
@@ -8,10 +22,10 @@
 
 ## User Stories:
     1. 
-        Title => listening to music 
-        User Story sentence => As a user, I want to listen to music 
-        Feature Tasks => Show more music
-        Acceptance Test => Check the sound quality
+        1. Title => listening to music 
+        2. User Story sentence => As a user, I want to  listen to music 
+        3. Feature Tasks => Show more music
+        4. Acceptance Test => Check the sound quality
     2. 
         Title => improve mood
         User Story sentence => As a user, I want an experience that makes my mood better
