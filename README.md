@@ -53,13 +53,20 @@
 
 ## Database Schema Diagram
 
-| modeId      | mode |
+| moodId      | mood |
 | ----------- | ----------- |
-| id1      | mode1       |
-| id2   | mode2        |
+| id1      | mood       |
+| id2   | mood        |
 
 
 | songId      | song |frequency|
 | ----------- | ----------- |-----|
 | id1      | song1       |number1|
 | id2   | song2        |number2|
+
+
+| pictureId      | picture |category|
+| ----------- | ----------- |-----|
+| id1      | Pic1       |Mood1|
+| id2   | Pic2      |Mood1|
+| id3  | Pic3     |Mood2|
