@@ -17,7 +17,7 @@
 
 ## Wire frames
 
-![wire frame](wirefram.png)
+![wire frame](docs/wirefram.png)
 <br>
 
 ## User Stories:
@@ -43,13 +43,13 @@
         Acceptance Test => Make sure the music on display matches the mood
 
 
-## [Software Requirements](requirements.md).
+## [Software Requirements](docs/requirements.md).
 <br>
 <br>
 
 ## Domain Modeling
 
-![Domain Modeling](DomainModeling.jpg)
+![Domain Modeling](docs/DomainModeling.jpg)
 
 ## Database Schema Diagram
 
