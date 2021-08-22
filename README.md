@@ -34,7 +34,7 @@
 <br>
 
 ## User Stories:
- ![user story](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
+ [user story](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 
 ## [Software Requirements](docs/requirements.md).
