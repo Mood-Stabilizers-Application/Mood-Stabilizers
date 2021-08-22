@@ -16,13 +16,13 @@
 <br>
 
 
-## Trello link 
+## Project management tool 
 
-[Trello board link](https://trello.com/b/2ZG9DacA/midpro)
+[GitHub Projects](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 <br>
 
-[Trello invite link](https://trello.com/invite/b/2ZG9DacA/090ed56e3112fc4fe02d0b09fc94b9c3/midpro)
+
 
 ## Wire frames
 
