@@ -21,7 +21,7 @@
 [GitHub Projects](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 <br>
-
+ * the user stories are in the GitHub Projects tool 
 
 
 ## Wire frames
