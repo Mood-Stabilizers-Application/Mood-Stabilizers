@@ -18,15 +18,18 @@
 
 ## Trello link 
 
-[Trello board link](https://trello.com/b/2ZG9DacA/midpro
-)
+[Trello board link](https://trello.com/b/2ZG9DacA/midpro)
+
 <br>
-[Trello invite link](https://trello.com/invite/b/2ZG9DacA/090ed56e3112fc4fe02d0b09fc94b9c3/midpro
-)
+[Trello invite link](https://trello.com/invite/b/2ZG9DacA/090ed56e3112fc4fe02d0b09fc94b9c3/midpro)
 
 ## Wire frames
 
 ![wire frame](docs/wirefram.png)
+
+[Figma Link ](https://www.figma.com/file/0BOvMag0erdU0nF6Sy5yw0/Untitled?node-id=1%3A10)
+
+
 <br>
 
 ## User Stories:
