@@ -1,6 +1,5 @@
 # Import all packages and libraries
- 
-from MoodStablizer.train import * 
+from train import *
 # Code for GUI and mapping with emojis
 
 # start the webcam feed
@@ -20,7 +19,7 @@ while True:
 
     for (x, y, w, h) in num_faces:
         cv2.rectangle(frame, (x, y - 50), (x + w, y + h + 10), (255, 0, 0), 2)
-        roi_gray_frame = gray_frame[y : y + h, x : x + w]
+        roi_gray_frame = gray_frame[y: y + h, x: x + w]
         cropped_img = np.expand_dims(
             np.expand_dims(cv2.resize(roi_gray_frame, (48, 48)), -1), 0
         )
@@ -37,7 +36,8 @@ while True:
             cv2.LINE_AA,
         )
 
-    cv2.imshow("Video", cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
+    cv2.imshow("Video", cv2.resize(
+        frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
