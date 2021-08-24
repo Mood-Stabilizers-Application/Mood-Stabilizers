@@ -16,6 +16,7 @@ def play_sound(mood):
 
     def stop():
         pygame.mixer.music.stop()
+        
 
     bt_sraet = Button(root , text='play',font=(22),command=play)
     bt_sraet.pack(pady=20)
