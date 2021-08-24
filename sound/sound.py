@@ -17,7 +17,7 @@ def play_sound(mood):
     def stop():
         pygame.mixer.music.stop()
 
-    bt_sraet = Button(root , text='hello',font=(22),command=play)
+    bt_sraet = Button(root , text='play',font=(22),command=play)
     bt_sraet.pack(pady=20)
 
     bt_stop = Button(root,text='stop',font=(22),command=stop)
@@ -26,3 +26,4 @@ def play_sound(mood):
     root.mainloop()
     return f'sound/music/angry/{mood}.wav'
     
+play_sound('happy')
