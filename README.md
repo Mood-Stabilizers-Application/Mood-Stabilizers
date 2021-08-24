@@ -16,13 +16,13 @@
 <br>
 
 
-## Trello link 
+## Project management tool 
 
-[Trello board link](https://trello.com/b/2ZG9DacA/midpro)
+[GitHub Projects](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 <br>
+ * the user stories are in the GitHub Projects tool 
 
-[Trello invite link](https://trello.com/invite/b/2ZG9DacA/090ed56e3112fc4fe02d0b09fc94b9c3/midpro)
 
 ## Wire frames
 
@@ -34,26 +34,7 @@
 <br>
 
 ## User Stories:
-    1. 
-        1. Title => listening to music 
-        2. User Story sentence => As a user, I want to  listen to music 
-        3. Feature Tasks => Show more music
-        4. Acceptance Test => Check the sound quality
-    2. 
-        Title => improve mood
-        User Story sentence => As a user, I want an experience that makes my mood better
-        Feature Tasks => Add songs to help raise the level of happiness
-        Acceptance Test => Be careful not to give any song that might give the opposite effect
-    3. 
-        Title => Get to know my mood
-        User Story sentence => As a user I want to know my mood
-        Feature Tasks => Determine the current moods more quickly and accurately
-        Acceptance Test => Make sure that the case identified is true
-    4. 
-        Title => Music according to mood
-        User Story sentence => As a user, I want to listen to music that suits my mood
-        Feature Tasks => Add additional music and more moods
-        Acceptance Test => Make sure the music on display matches the mood
+ [user story](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 
 ## [Software Requirements](docs/requirements.md).
