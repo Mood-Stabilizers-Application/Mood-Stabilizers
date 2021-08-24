@@ -7,6 +7,31 @@ mood_list = ['Angry', 'Disgusted', 'Fearful',
 after_quit = 'Did you like your experience with Mood Stabilizer?'
 quit_yes_answer = 'thank you '
 quit_no_answer = 'sorry to hear that'
+
+
+def main_page():
+    sg.theme('DarkBlue15')
+    ttk_style = 'vista'
+    layout = [[sg.Text('Mood-Stabilizers')],
+              [sg.Button('start'), sg.Cancel('quit')]]
+    window = sg.Window('Mood-Stabilizers', layout,
+                       margins=(300, 200), ttk_theme=ttk_style)
+    event, values = window.read()
+    if event == 'start':
+        open_window()
+    elif event == 'quit':
+        layout = [[sg.Text(after_quit)],
+                  [sg.Button('yes'), sg.Button('no')]]
+        window = sg.Window('rate', layout, margins=(100, 100))
+        event, values = window.read()
+        if event == 'yes':
+            sg.popup(quit_yes_answer)
+        elif event == 'no':
+            sg.popup(quit_no_answer)
+
+        window.close()
+
+
 def open_window():
     while True:
         sg.theme('LightGreen4')
@@ -47,6 +72,8 @@ def open_window():
                 sg.popup(quit_no_answer)
                 break
     window.close()
+
+
 def open_cam():
     sg.theme('LightGreen4')
     ttk_style = 'vista'
@@ -60,6 +87,8 @@ def open_cam():
         mood = play_cam()
         sg.popup(f'your mood is {mood}')
     window.close()
+
+
 def play_mood():
     sg.theme('LightGreen4')
     ttk_style = 'vista'
@@ -77,6 +106,8 @@ def play_mood():
             sg.popup(f'your mood is {mood}')
             play_sound(mood)
     window.close()
+
+
 def choose_mood():
     while True:
         sg.theme('LightGreen4')
@@ -107,24 +138,9 @@ def choose_mood():
                 sg.popup(quit_no_answer)
                 break
     window.close()
-def main_page():
-    sg.theme('DarkBlue15')
-    ttk_style = 'vista'
-    layout = [[sg.Text('Mood-Stabilizers')],
-              [sg.Button('start'), sg.Cancel('quit')]]
-    window = sg.Window('Mood-Stabilizers', layout,
-                       margins=(300, 200), ttk_theme=ttk_style)
-    event, values = window.read()
-    if event == 'start':
-        open_window()
-    elif event == 'quit':
-        layout = [[sg.Text(after_quit)],
-                  [sg.Button('yes'), sg.Button('no')]]
-        window = sg.Window('rate', layout, margins=(100, 100))
-        event, values = window.read()
-        if event == 'yes':
-            sg.popup(quit_yes_answer)
-        elif event == 'no':
-            sg.popup(quit_no_answer)
-    window.close()
+
+
 main_page()
+
+
+# sg.CPRINT_DESTINATION_WINDOW
