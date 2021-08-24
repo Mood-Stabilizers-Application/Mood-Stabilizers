@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from keras.models import load_model
-import time
+import datetime
 
 
 def play_cam():
@@ -18,7 +18,8 @@ def play_cam():
         6: "Surprised",
     }
     cap = cv2.VideoCapture(0)
-
+    time_1 = datetime.datetime.now().second
+    time_2  = time_1 + 5
     while True:
         ret, frame = cap.read()
 
@@ -71,12 +72,12 @@ def play_cam():
             )
             # cv2.puttest add the text above the rectangle
 
-            return emotion_dict[maxindex]
         cv2.imshow("Video", cv2.resize(
             frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
         #  cv2.imshow is opening the video
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+        if cv2.waitKey(1) and datetime.datetime.now().second == time_2:
+            return emotion_dict[maxindex]
+
 
     cap.release()
     # Closes video file or capturing device.
