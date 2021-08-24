@@ -26,4 +26,3 @@ def play_sound(mood):
     root.mainloop()
     return f'sound/music/angry/{mood}.wav'
     
-play_sound('happy')

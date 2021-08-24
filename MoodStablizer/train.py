@@ -77,3 +77,4 @@ emotion_model_info = emotion_model.fit_generator(
 
 # Save the model weights
 emotion_model.save_weights('emotion_model.h5')
+emotion_model.save('emotion_model2.h5')
