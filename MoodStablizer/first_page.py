@@ -4,35 +4,35 @@ import random
 from CamDetect import play_cam, close_cam
 mood_list = ['Angry', 'Disgusted', 'Fearful',
              'Happy', 'Neutral', 'Sad', 'Suprise']
-after_quit = 'Did you like your experience with Mood Stabilizer?'
-quit_yes_answer = 'thank you '
-quit_no_answer = 'sorry to hear that'
+after_quit = 'Did you like your experience with Mood Stabilizer App?'
+quit_yes_answer = 'Thank you!'
+quit_no_answer = 'Sorry to hear that!'
 
 
 def main_page():
     sg.theme('DarkAmber')
     ttk_style = 'vista'
-    layout = [[sg.Text('Mood-Stabilizers')],
-              [sg.Button('start'), sg.Cancel('quit')]]
-    window = sg.Window('Mood-Stabilizers', layout,
+    layout = [[sg.Text('Mood-Stabilizers-App')],
+              [sg.Button('Start'), sg.Cancel('Quit')]]
+    window = sg.Window('Mood-Stabilizers-App', layout,
                        margins=(250, 150), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     print(values)
     print(event)
-    if event == 'start':
+    if event == 'Start':
         # pass
         window.close()
         open_window()
-    elif event == 'quit' or event == sg.WIN_CLOSED:
+    elif event == 'Quit' or event == sg.WIN_CLOSED:
         layout = [[sg.Text(after_quit)],
-                  [sg.Button('yes'), sg.Button('no')]]
+                  [sg.Button('Yes'), sg.Button('No')]]
         window = sg.Window('rate', layout, margins=(100, 100))
         event, values = window.read()
-        if event == 'yes':
+        if event == 'Yes':
             sg.popup(quit_yes_answer)
             window.close()
 
-        elif event == 'no':
+        elif event == 'No':
             sg.popup(quit_no_answer)
             window.close()
 
@@ -43,50 +43,50 @@ def open_window():
     while True:
         sg.theme('DarkAmber')
         ttk_style = 'vista'
-        layout = [[sg.Button('home')],
-                  [sg.Button('options')],
-                  [sg.Text('welcome to Mood stabilizers')],
-                  [sg.Button('lestin to a random song from the library'),
-                   sg.Cancel('quit')],
-                  [sg.Button('what is my  Mood?')],
-                  [sg.Button('Know your mood and let us make you feel better.')],
-                  [sg.Button('pick your mood manually')],
+        layout = [[sg.Button('Home')],
+                  [sg.Button('Options')],
+                  [sg.Text('Welcome to Mood Stabilizers App!')],
+                  [sg.Button('Listen to random song from the library!'),
+                   sg.Cancel('Quit')],
+                  [sg.Button('What is my Mood?')],
+                  [sg.Button('Know your mood and let us make you feel better!')],
+                  [sg.Button('Pick your mood manually!')],
                   ]
-        window = sg.Window('Mood-Stabilizers', layout,
+        window = sg.Window('Mood-Stabilizers-App', layout,
                            margins=(100, 50), ttk_theme=ttk_style, size=(700, 400))
         event, values = window.read()
-        if event == 'lestin to a random song from the library':
+        if event == 'Listen to random song from the library!':
             play_sound(random.choice(mood_list))
             window.close()
-        elif event == 'what is my  Mood?':
+        elif event == 'What is my Mood?':
             window.close()
             open_cam()
             break
-        elif event == 'Know your mood and let us make you feel better.':
+        elif event == 'Know your mood and let us make you feel better!':
             window.close()
             play_mood()
             break
-        elif event == 'pick your mood manually':
+        elif event == 'Pick your mood manually!':
             window.close()
             choose_mood()
             break
-        elif event == 'home':
+        elif event == 'Home':
             window.close()
             main_page()
-        elif event == 'options':
+        elif event == 'Options':
             window.close()
             open_window()
             break
-        elif event == 'quit' or event == sg.WIN_CLOSED:
+        elif event == 'Quit' or event == sg.WIN_CLOSED:
             layout = [[sg.Text(after_quit)],
-                      [sg.Button('yes'), sg.Button('no')]]
+                      [sg.Button('Yes'), sg.Button('No')]]
             window = sg.Window('rate', layout, margins=(100, 100))
             event, values = window.read()
-            if event == 'yes':
+            if event == 'Yes':
                 sg.popup(quit_yes_answer)
                 window.close()
                 break
-            elif event == 'no':
+            elif event == 'No':
                 sg.popup(quit_no_answer)
                 window.close()
                 break
@@ -96,22 +96,22 @@ def open_window():
 def open_cam():
     sg.theme('DarkAmber')
     ttk_style = 'vista'
-    layout = [[sg.Button('home')],
-              [sg.Button('options')],
-              [sg.Text('welcome to mood stabilizers')],
-              [sg.Button('what is my currunt Mood?'), sg.Cancel()],
+    layout = [[sg.Button('Home')],
+              [sg.Button('Options')],
+              [sg.Text('Welcome to Mood Stabilizers App!')],
+              [sg.Button('What is my current mood?'), sg.Cancel()],
               ]
-    window = sg.Window('Mood-Stabilizers', layout,
+    window = sg.Window('Mood-Stabilizers-App', layout,
                        margins=(250, 50), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
-    if event == 'what is my currunt Mood?':
+    if event == 'What is my current mood?':
         window.close()
         mood = play_cam()
-        sg.popup(f'your mood is {mood}')
-    elif event == 'home':
+        sg.popup(f'Your mood is {mood}')
+    elif event == 'Home':
         window.close()
         main_page()
-    elif event == 'options':
+    elif event == 'Options':
         window.close()
         open_window()
     window.close()
@@ -121,30 +121,30 @@ def play_mood():
     while True:
         sg.theme('DarkAmber')
         ttk_style = 'vista'
-        layout = [[sg.Button('home')],
-                  [sg.Button('options')],
-                  [sg.Text('welcome to mood stabilizers')],
+        layout = [[sg.Button('Home')],
+                  [sg.Button('Options')],
+                  [sg.Text('Welcome to Mood Stabilizers App!')],
                   [sg.Button(
-                      'Know your mood and let us make you feel better.'), sg.Cancel()],
+                      'Know your mood and let us make you feel better!'), sg.Cancel()],
                   ]
-        window = sg.Window('Mood-Stabilizers', layout,
+        window = sg.Window('Mood-Stabilizers-App', layout,
                            margins=(200, 50), ttk_theme=ttk_style, size=(700, 400))
 
         event, values = window.read()
-        if event == 'Know your mood and let us make you feel better.':
+        if event == 'Know your mood and let us make you feel better!':
             mood = play_cam()
             if mood:
                 close_cam()
                 sg.popup(
-                    f'your mood is {mood}, we recommend this song for you ')
+                    f'Your mood is {mood}, We recommend this song for you!')
                 play_sound(mood)
                 window.close()
 
                 print(1)
-        elif event == 'home':
+        elif event == 'Home':
             window.close()
             main_page()
-        elif event == 'options':
+        elif event == 'Options':
             window.close()
             open_window()
     window.close()
@@ -155,9 +155,9 @@ def choose_mood():
         sg.theme('DarkAmber')
         ttk_style = 'vista'
         layout = [
-            [sg.Button('home')],
-            [sg.Button('options')], [sg.Text('choose a mood')],
-            [sg.Button('Angry'), sg.Cancel('quit')],
+            [sg.Button('Home')],
+            [sg.Button('Options')], [sg.Text('Choose mood!')],
+            [sg.Button('Angry'), sg.Cancel('Quit')],
             [sg.Button('Happy')],
             [sg.Button('Disgusted')],
             [sg.Button('Fearful')],
@@ -165,28 +165,28 @@ def choose_mood():
             [sg.Button('Sad')],
             [sg.Button('Surprised')],
         ]
-        window = sg.Window('Mood-Stabilizers', layout,
+        window = sg.Window('Mood-Stabilizers-App', layout,
                            margins=(250, 20), ttk_theme=ttk_style, size=(700, 400))
         event, values = window.read()
         if event in mood_list:
             play_sound(event)
-        elif event == 'home':
+        elif event == 'Home':
             window.close()
             main_page()
-        elif event == 'options':
+        elif event == 'Options':
             window.close()
             open_window()
-        elif event == 'quit' or event == sg.WIN_CLOSED:
+        elif event == 'Quit' or event == sg.WIN_CLOSED:
             layout = [[sg.Text(after_quit)],
-                      [sg.Button('yes'), sg.Button('no')]]
+                      [sg.Button('Yes'), sg.Button('No')]]
             window = sg.Window('rate', layout, margins=(100, 100))
             event, values = window.read()
-            if event == 'yes':
+            if event == 'Yes':
                 sg.popup(quit_yes_answer)
                 window.close()
 
                 break
-            elif event == 'no':
+            elif event == 'No':
                 sg.popup(quit_no_answer)
                 window.close()
 
