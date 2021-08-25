@@ -1,4 +1,4 @@
-from sound.sound import paly_sound_path
+from sound.sound import *
 from MoodStablizer.CamDetect import time
 import cv2
 import datetime
