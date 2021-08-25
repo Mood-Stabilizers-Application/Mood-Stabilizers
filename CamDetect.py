@@ -8,7 +8,13 @@ import cv2
 from cv2 import data
 import numpy as np
 from keras.models import load_model
+import datetime 
 
+
+def time():
+    time_1 = datetime.datetime.now().second
+    time_2 = time_1 + 5
+    return time_2
 
 
 def play_cam():
@@ -27,6 +33,7 @@ def play_cam():
         6: "Surprised",
     }
     cap = cv2.VideoCapture(0)
+    time_2 = time()
     while True:
         # Find haarcascade to draw bounding box around face
         ret, frame = cap.read()
@@ -59,14 +66,17 @@ def play_cam():
                 cv2.LINE_AA,
             )
             
-            return emotion_dict[maxindex]
         cv2.imshow("Video", cv2.resize(frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+        if cv2.waitKey(1) and  datetime.datetime.now().second == time_2:
+            return emotion_dict[maxindex]
         
 
     cap.release()
     cv2.destroyAllWindows()
 
+
 def close_cam():
     cv2.destroyAllWindows()
+    
+# play_cam()
+# print(play_cam())

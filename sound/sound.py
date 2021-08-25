@@ -1,6 +1,8 @@
 from tkinter import *
 import pygame
 
+def paly_sound_path(mood):
+    return f'sound/music/{mood}/{mood}.wav'
 
 def play_sound(mood):
     root = Tk()
@@ -11,7 +13,7 @@ def play_sound(mood):
     pygame.mixer.init()
 
     def play():
-        pygame.mixer.music.load(f'sound/music/{mood}/{mood}.wav')
+        pygame.mixer.music.load(paly_sound_path(mood))
         pygame.mixer.music.play(loops=0)
 
     def stop():
@@ -25,5 +27,9 @@ def play_sound(mood):
     bt_stop.pack(pady=20)
 
     root.mainloop()
-    return f'sound/music/angry/{mood}.wav'
     
+
+
+   
+
+

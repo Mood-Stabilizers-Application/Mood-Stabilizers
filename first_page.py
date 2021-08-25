@@ -22,13 +22,8 @@ def open_window():
         event, values = window.read()    
         
         if event == 'random sound':
-            print(0)
             play_sound(random.choice(mood_list)) 
-            print(1)
             window.close()
-            print(2)
-
-
             
         elif event == 'check mood':
             window.close()
@@ -53,6 +48,7 @@ def open_window():
             elif event == 'no':
                 sg.popup('sorry about that')
                 break       
+
     window.close()
 
 def open_cam():
@@ -69,6 +65,7 @@ def open_cam():
      
     if event == 'check mood':
         mood =play_cam()
+        close_cam()
         sg.popup(f'your mood is {mood}')
 
 
@@ -109,7 +106,6 @@ def choose_mood():
                         [sg.Button('Neutral')],
                         [sg.Button('Sad')],
                         [sg.Button('Surprised')],
-
                         ]      
 
         window = sg.Window('Mood-Stabilizers', layout , margins=(300,200),ttk_theme=ttk_style)    
