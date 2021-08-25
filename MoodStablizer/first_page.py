@@ -17,9 +17,12 @@ def main_page():
     window = sg.Window('Mood-Stabilizers', layout,
                        margins=(300, 200), ttk_theme=ttk_style)
     event, values = window.read()
+    print(values)
+    print(event)
     if event == 'start':
+        # pass
         open_window()
-    elif event == 'quit':
+    elif event == 'quit' or event == sg.WIN_CLOSED:
         layout = [[sg.Text(after_quit)],
                   [sg.Button('yes'), sg.Button('no')]]
         window = sg.Window('rate', layout, margins=(100, 100))
@@ -60,7 +63,7 @@ def open_window():
         elif event == 'pick your mood manually':
             window.close()
             choose_mood()
-        elif event == 'quit':
+        elif event == 'quit' or event == sg.WIN_CLOSED:
             layout = [[sg.Text(after_quit)],
                       [sg.Button('yes'), sg.Button('no')]]
             window = sg.Window('rate', layout, margins=(100, 100))
@@ -126,7 +129,7 @@ def choose_mood():
         event, values = window.read()
         if event != 'quit':
             play_sound(event)
-        elif event == 'quit':
+        elif event == 'quit' or event == sg.WIN_CLOSED:
             layout = [[sg.Text(after_quit)],
                       [sg.Button('yes'), sg.Button('no')]]
             window = sg.Window('rate', layout, margins=(100, 100))
@@ -141,6 +144,3 @@ def choose_mood():
 
 
 main_page()
-
-
-# sg.CPRINT_DESTINATION_WINDOW
