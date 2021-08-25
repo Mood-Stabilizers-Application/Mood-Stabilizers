@@ -7,6 +7,7 @@ authors = ["abdu-zeyad <abd.d@live.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^6.2.4"
+pygame = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 
