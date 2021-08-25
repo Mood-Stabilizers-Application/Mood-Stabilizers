@@ -15,12 +15,13 @@ def main_page():
     layout = [[sg.Text('Mood-Stabilizers')],
               [sg.Button('start'), sg.Cancel('quit')]]
     window = sg.Window('Mood-Stabilizers', layout,
-                       margins=(300, 200), ttk_theme=ttk_style)
+                       margins=(250, 150), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     print(values)
     print(event)
     if event == 'start':
         # pass
+        window.close()
         open_window()
     elif event == 'quit' or event == sg.WIN_CLOSED:
         layout = [[sg.Text(after_quit)],
@@ -46,14 +47,11 @@ def open_window():
                   [sg.Button('Know your mood and let us make you feel better.')],
                   [sg.Button('pick your mood manually')]]
         window = sg.Window('Mood-Stabilizers', layout,
-                           margins=(300, 200), ttk_theme=ttk_style)
+                           margins=(100, 50), ttk_theme=ttk_style, size=(700, 400))
         event, values = window.read()
         if event == 'lestin to a random song from the library':
-            print(0)
             play_sound(random.choice(mood_list))
-            print(1)
             window.close()
-            print(2)
         elif event == 'what is my currunt Mood?':
             window.close()
             open_cam()
@@ -84,7 +82,7 @@ def open_cam():
               [sg.Button('what is my currunt Mood?'), sg.Cancel()],
               ]
     window = sg.Window('Mood-Stabilizers', layout,
-                       margins=(300, 200), ttk_theme=ttk_style)
+                       margins=(250, 150), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     if event == 'what is my currunt Mood?':
         mood = play_cam()
@@ -100,13 +98,15 @@ def play_mood():
                   'Know your mood and let us make you feel better.'), sg.Cancel()],
               ]
     window = sg.Window('Mood-Stabilizers', layout,
-                       margins=(300, 200), ttk_theme=ttk_style)
+                       margins=(200, 150), ttk_theme=ttk_style, size=(700, 400))
+
     event, values = window.read()
     if event == 'Know your mood and let us make you feel better.':
         mood = play_cam()
         if mood:
             close_cam()
-            sg.popup(f'your mood is {mood}')
+            sg.popup(
+                f'your mood is {mood}, we recommend this song for you ')
             play_sound(mood)
     window.close()
 
@@ -125,7 +125,7 @@ def choose_mood():
                   [sg.Button('Surprised')],
                   ]
         window = sg.Window('Mood-Stabilizers', layout,
-                           margins=(300, 200), ttk_theme=ttk_style)
+                           margins=(250, 150), ttk_theme=ttk_style, size=(700, 400))
         event, values = window.read()
         if event != 'quit':
             play_sound(event)

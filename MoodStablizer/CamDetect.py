@@ -19,7 +19,7 @@ def play_cam():
     }
     cap = cv2.VideoCapture(0)
     time_1 = datetime.datetime.now().second
-    time_2  = time_1 + 5
+    time_2 = time_1 + 5
     while True:
         ret, frame = cap.read()
 
@@ -76,8 +76,9 @@ def play_cam():
             frame, (1200, 860), interpolation=cv2.INTER_CUBIC))
         #  cv2.imshow is opening the video
         if cv2.waitKey(1) and datetime.datetime.now().second == time_2:
+            cap.release()
+            cv2.destroyAllWindows()
             return emotion_dict[maxindex]
-
 
     cap.release()
     # Closes video file or capturing device.
