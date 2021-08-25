@@ -45,7 +45,7 @@ def open_window():
                   [sg.Text('welcome to Mood stabilizers')],
                   [sg.Button('lestin to a random song from the library'),
                    sg.Cancel('quit')],
-                  [sg.Button('what is my currunt Mood?')],
+                  [sg.Button('what is my  Mood?')],
                   [sg.Button('Know your mood and let us make you feel better.')],
                   [sg.Button('pick your mood manually')],
                   ]
