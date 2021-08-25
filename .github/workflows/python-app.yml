@@ -35,4 +35,6 @@ jobs:
       run: |
         pip install pygame
         pip install opencv-python
+        pip install DateTime
+        pip install tensorflow
         python3 -m pytest tests
