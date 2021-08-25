@@ -23,5 +23,5 @@ def play_sound(mood):
     bt_stop = Button(root, text='stop', font=(22), command=stop)
     bt_stop.pack(pady=20)
 
-    root.mainloop()
+    # root.mainloop()
     return f'MoodStablizer/sound/music/{mood}/{mood}.wav'
