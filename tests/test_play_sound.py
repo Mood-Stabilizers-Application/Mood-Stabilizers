@@ -11,11 +11,11 @@ def test_play_sound():
     assert excepted == actual
 
 
-def test_cam():
-    cap = cv2.VideoCapture(0)
-    excepted = True
-    actual = cap.isOpened()
-    assert excepted == actual
+# def test_cam():
+#     cap = cv2.VideoCapture(0)
+#     excepted = True
+#     actual = cap.isOpened()
+#     assert excepted == actual
 
 
 def test_time():
