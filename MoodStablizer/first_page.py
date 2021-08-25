@@ -10,7 +10,7 @@ quit_no_answer = 'sorry to hear that'
 
 
 def main_page():
-    sg.theme('DarkBlue15')
+    sg.theme('DarkAmber')
     ttk_style = 'vista'
     layout = [[sg.Text('Mood-Stabilizers')],
               [sg.Button('start'), sg.Cancel('quit')]]
@@ -30,15 +30,18 @@ def main_page():
         event, values = window.read()
         if event == 'yes':
             sg.popup(quit_yes_answer)
+            window.close()
+
         elif event == 'no':
             sg.popup(quit_no_answer)
+            window.close()
 
         window.close()
 
 
 def open_window():
     while True:
-        sg.theme('LightGreen4')
+        sg.theme('DarkAmber')
         ttk_style = 'vista'
         layout = [[sg.Button('home')],
                   [sg.Button('options')],
@@ -55,21 +58,25 @@ def open_window():
         if event == 'lestin to a random song from the library':
             play_sound(random.choice(mood_list))
             window.close()
-        elif event == 'what is my currunt Mood?':
+        elif event == 'what is my  Mood?':
             window.close()
             open_cam()
+            break
         elif event == 'Know your mood and let us make you feel better.':
             window.close()
             play_mood()
+            break
         elif event == 'pick your mood manually':
             window.close()
             choose_mood()
+            break
         elif event == 'home':
             window.close()
             main_page()
         elif event == 'options':
             window.close()
             open_window()
+            break
         elif event == 'quit' or event == sg.WIN_CLOSED:
             layout = [[sg.Text(after_quit)],
                       [sg.Button('yes'), sg.Button('no')]]
@@ -77,15 +84,17 @@ def open_window():
             event, values = window.read()
             if event == 'yes':
                 sg.popup(quit_yes_answer)
+                window.close()
                 break
             elif event == 'no':
                 sg.popup(quit_no_answer)
+                window.close()
                 break
     window.close()
 
 
 def open_cam():
-    sg.theme('LightGreen4')
+    sg.theme('DarkAmber')
     ttk_style = 'vista'
     layout = [[sg.Button('home')],
               [sg.Button('options')],
@@ -96,6 +105,7 @@ def open_cam():
                        margins=(250, 50), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     if event == 'what is my currunt Mood?':
+        window.close()
         mood = play_cam()
         sg.popup(f'your mood is {mood}')
     elif event == 'home':
@@ -109,7 +119,7 @@ def open_cam():
 
 def play_mood():
     while True:
-        sg.theme('LightGreen4')
+        sg.theme('DarkAmber')
         ttk_style = 'vista'
         layout = [[sg.Button('home')],
                   [sg.Button('options')],
@@ -142,7 +152,7 @@ def play_mood():
 
 def choose_mood():
     while True:
-        sg.theme('LightGreen4')
+        sg.theme('DarkAmber')
         ttk_style = 'vista'
         layout = [
             [sg.Button('home')],
@@ -173,9 +183,13 @@ def choose_mood():
             event, values = window.read()
             if event == 'yes':
                 sg.popup(quit_yes_answer)
+                window.close()
+
                 break
             elif event == 'no':
                 sg.popup(quit_no_answer)
+                window.close()
+
                 break
     window.close()
 
