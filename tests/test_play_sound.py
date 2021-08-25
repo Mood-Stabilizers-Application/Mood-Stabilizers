@@ -1,3 +1,4 @@
+import pygame
 from sound.sound import *
 from MoodStablizer.CamDetect import time
 import cv2
