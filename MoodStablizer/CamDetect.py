@@ -4,6 +4,12 @@ from keras.models import load_model
 import datetime
 
 
+def time():
+    time_1 = datetime.datetime.now().second
+    time_2 = time_1 + 5
+    return time_2
+
+
 def play_cam():
 
     emotion_model = load_model('MoodStablizer/emotion_model2.h5')
@@ -18,8 +24,7 @@ def play_cam():
         6: "Surprised",
     }
     cap = cv2.VideoCapture(0)
-    time_1 = datetime.datetime.now().second
-    time_2 = time_1 + 5
+    time_2 = time()
     while True:
         ret, frame = cap.read()
 
