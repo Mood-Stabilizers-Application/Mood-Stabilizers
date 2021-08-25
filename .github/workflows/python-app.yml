@@ -34,4 +34,5 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pygame
+        pip install opencv-python
         python3 -m pytest tests
