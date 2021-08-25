@@ -98,4 +98,3 @@ def close_cam():
     cv2.destroyAllWindows()
 
 
-play_cam()
