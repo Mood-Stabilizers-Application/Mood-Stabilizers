@@ -7,7 +7,7 @@ def play_sound(mood):
 
     root.geometry('300x300')
 
-    root.title('songs')
+    root.title('Songs list')
     pygame.mixer.init()
 
     def play():
@@ -17,10 +17,10 @@ def play_sound(mood):
     def stop():
         pygame.mixer.music.stop()
 
-    bt_sraet = Button(root, text='play', font=(22), command=play)
+    bt_sraet = Button(root, text='Play', font=(22), command=play)
     bt_sraet.pack(pady=20)
 
-    bt_stop = Button(root, text='stop', font=(22), command=stop)
+    bt_stop = Button(root, text='Stop', font=(22), command=stop)
     bt_stop.pack(pady=20)
 
     # root.mainloop()
