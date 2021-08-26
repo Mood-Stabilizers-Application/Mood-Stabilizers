@@ -26,12 +26,12 @@ def test_time():
     assert excepted == actual
 
 
-def test_images():
-    excepted = (
-        'number of train images is:12966 and number of validation images is: 3422')
+# def test_images():
+#     excepted = (
+#         'number of train images is:12966 and number of validation images is: 3422')
 
-    actual = images()
-    assert excepted == actual
+#     actual = images()
+#     assert excepted == actual
 
 
 def test_model():
