@@ -64,3 +64,33 @@
 | id1      | Pic1       |Mood1|
 | id2   | Pic2      |Mood1|
 | id3  | Pic3     |Mood2|
+
+
+
+## how to use the app 
+
+### installation 
+
+1- pip install tkinter
+
+2- pip install pygame 
+
+3- pip install tensorflow 
+
+4- pip install PySimpleGUI 
+
+5 - pip install opencv-python 
+
+6 - pip install keras 
+
+7- pip install datetime
+
+### where should run the app  
+
+- MoodStablizer 
+
+- first_page.py(run this file)
+
+### how to run tests  
+
+- type : python3 -m pytest tests 
