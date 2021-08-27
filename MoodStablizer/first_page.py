@@ -1,3 +1,4 @@
+from typing import Sized
 import PySimpleGUI as sg
 from sound.sound import play_sound
 import random
@@ -12,10 +13,11 @@ quit_no_answer = 'Sorry to hear that!'
 def main_page():
     sg.theme('DarkAmber')
     ttk_style = 'vista'
-    layout = [[sg.Text('Mood-Stabilizers-App')],
-              [sg.Button('Start'), sg.Cancel('Quit')]]
+    layout = [[sg.Text('Mood Stabilizers', font='Times-New-Roman 30', pad=((0, 0), (30, 0)), justification='center', size=(100, 4))],
+
+              [sg.Button('Start', size=(10, 5), mouseover_colors='gray', pad=((220, 10), (0, 0))), sg.Cancel('Quit', size=(10, 5))]]
     window = sg.Window('Mood-Stabilizers-App', layout,
-                       margins=(250, 150), ttk_theme=ttk_style, size=(700, 400))
+                       ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     print(values)
     print(event)
@@ -43,17 +45,22 @@ def open_window():
     while True:
         sg.theme('DarkAmber')
         ttk_style = 'vista'
-        layout = [[sg.Button('Home')],
-                  [sg.Button('Options')],
-                  [sg.Text('Welcome to Mood Stabilizers App!')],
-                  [sg.Button('Listen to random song from the library!'),
-                   sg.Cancel('Quit')],
-                  [sg.Button('What is my Mood?')],
-                  [sg.Button('Know your mood and let us make you feel better!')],
-                  [sg.Button('Pick your mood manually!')],
+        layout = [[sg.Button('Home', size=(7, 2), pad=((10, 500), (10, 20))), sg.Button('Options', size=(7, 2), pad=((0, 0), (10, 20)))],
+                  [sg.Text('Welcome to Mood Stabilizers App!',
+                           font='Barlow 20 bold', justification='center', size=(100, 3), text_color='gold')],
+                  [sg.Button(
+                      'Listen to random song from the library!', size=(40, 1), pad=((200, 5), (0, 0)))],
+                  [sg.Button('What is my Mood?', size=(
+                      40, 1), pad=((200, 5), (0, 0)))],
+                  [sg.Button(
+                      'Know your mood and let us make you feel better!', size=(40, 1), pad=((200, 5), (0, 0)))],
+                  [sg.Button('Pick your mood manually!', size=(
+                      40, 1), pad=((200, 5), (0, 0)))],
+                  [sg.Cancel('Quit', size=(
+                      40, 3), pad=((200, 5), (20, 0)))]
                   ]
         window = sg.Window('Mood-Stabilizers-App', layout,
-                           margins=(100, 50), ttk_theme=ttk_style, size=(700, 400))
+                           ttk_theme=ttk_style, size=(700, 400))
         event, values = window.read()
         if event == 'Listen to random song from the library!':
             play_sound(random.choice(mood_list))
@@ -122,13 +129,13 @@ def play_mood():
     sg.theme('DarkAmber')
     ttk_style = 'vista'
     layout = [[sg.Button('Home')],
-                [sg.Button('Options')],
-                [sg.Text('Welcome to Mood Stabilizers App!')],
-                [sg.Button(
-                    'Know your mood and let us make you feel better!'), sg.Cancel()],
-                ]
+              [sg.Button('Options')],
+              [sg.Text('Welcome to Mood Stabilizers App!')],
+              [sg.Button(
+                  'Know your mood and let us make you feel better!'), sg.Cancel()],
+              ]
     window = sg.Window('Mood-Stabilizers-App', layout,
-                        margins=(200, 50), ttk_theme=ttk_style, size=(700, 400))
+                       margins=(200, 50), ttk_theme=ttk_style, size=(700, 400))
 
     event, values = window.read()
     if event == 'Know your mood and let us make you feel better!':
@@ -162,7 +169,7 @@ def choose_mood():
         [sg.Button('Surprised')],
     ]
     window = sg.Window('Mood-Stabilizers-App', layout,
-                        margins=(250, 20), ttk_theme=ttk_style, size=(700, 400))
+                       margins=(250, 20), ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
     if event in mood_list:
         play_sound(event)
@@ -175,7 +182,7 @@ def choose_mood():
         open_window()
     elif event == 'Quit' or event == sg.WIN_CLOSED:
         layout = [[sg.Text(after_quit)],
-                    [sg.Button('Yes'), sg.Button('No')]]
+                  [sg.Button('Yes'), sg.Button('No')]]
         window = sg.Window('rate', layout, margins=(100, 100))
         event, values = window.read()
         if event == 'Yes':
