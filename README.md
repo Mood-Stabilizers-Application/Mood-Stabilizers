@@ -1,8 +1,9 @@
 # Mood-Stabilizers
+
 <br>
 
+## Team Members
 
-## Team Members :
 1. Mohammad Noor Jebreen
 
 2. Abdelmajed Alabed Alraheem
@@ -12,32 +13,30 @@
 4. laith fayiz abedelrahim hussein
 
 5. yazan ahmad
-   
+
 <br>
 
-
-## Project management tool 
+## Project management tool
 
 [GitHub Projects](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
 <br>
- * the user stories are in the GitHub Projects tool 
-
+ * the user stories are in the GitHub Projects tool
 
 ## Wire frames
 
 ![wire frame](docs/wirefram.png)
 
-[Figma Link ](https://www.figma.com/file/0BOvMag0erdU0nF6Sy5yw0/Untitled?node-id=1%3A10)
-
+[Figma Link](https://www.figma.com/file/0BOvMag0erdU0nF6Sy5yw0/Untitled?node-id=1%3A10)
 
 <br>
 
-## User Stories:
+## User Stories
+
  [user story](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
 
+## [Software Requirements](docs/requirements.md)
 
-## [Software Requirements](docs/requirements.md).
 <br>
 <br>
 
@@ -52,12 +51,10 @@
 | id1      | mood       |
 | id2   | mood        |
 
-
 | songId      | song |frequency|
 | ----------- | ----------- |-----|
 | id1      | song1       |number1|
 | id2   | song2        |number2|
-
 
 | pictureId      | picture |category|
 | ----------- | ----------- |-----|
@@ -65,32 +62,34 @@
 | id2   | Pic2      |Mood1|
 | id3  | Pic3     |Mood2|
 
+## How to use the app
 
+### *Installation*
 
-## how to use the app 
+Install the following packages:
 
-### installation 
+1. tkinter
+2. pygame
+3. tensorflow
+4. PySimpleGUI
+5. opencv-python
+6. keras
+7. datetime
 
-1- pip install tkinter
+collcting the data for machine learning:
 
-2- pip install pygame 
+1. Download FER 2013 Dataset using this link:
+[FER2013](https://www.kaggle.com/msambare/fer2013?)
+2. run this command in the terminal : mkdir data
+3. extract  the data inside folder data
 
-3- pip install tensorflow 
+### How to run this Application
 
-4- pip install PySimpleGUI 
+1. Navigate to MoodStabilizer folder
+2. open the first_page.py module
+3. run python file in terminal.
 
-5 - pip install opencv-python 
+### Run the tests
 
-6 - pip install keras 
-
-7- pip install datetime
-
-### where should run the app  
-
-- MoodStablizer 
-
-- first_page.py(run this file)
-
-### how to run tests  
-
-- type : python3 -m pytest tests 
+- Run the following command in the terminal : python3 -m pytest tests
+- some tests don't work on github actions, because the github cant reach the device's hardware.
