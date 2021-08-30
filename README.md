@@ -76,18 +76,16 @@ Install the following packages:
 6. keras
 7. datetime
 
-collcting the data for machine learning:
+collecting the data for machine learning:
 
 1. Download FER 2013 Dataset using this link:
-[FER2013](https://www.kaggle.com/msambare/fer2013?)
+[FER2013](https://www.kaggle.com/msambare/fer2013/download)
 2. run this command in the terminal : mkdir data
 3. extract  the data inside folder data
 
 ### How to run this Application
 
-1. Navigate to MoodStabilizer folder
-2. open the first_page.py module
-3. run python file in terminal.
+1. Run this command in the terminal: python MoodStablizer/first_page.py
 
 ### Run the tests
 
