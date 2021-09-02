@@ -16,6 +16,10 @@
 
 <br>
 
+## summary:
+
+### Our software acts as a mood detector, and we utilize machine learning to provide the user the choice to activate his camera, and the app will predict his mood and play a music appropriate for his/her mood. If the user does not open the cam, the user may also pick a mood from the list. The last option is to play the music list in shuffle mode.
+
 ## Project management tool
 
 [GitHub Projects](https://github.com/orgs/Mood-Stabilizers-Application/projects/1)
@@ -64,6 +68,18 @@
 
 ## How to use the app
 
+
+
+### How to run this Application
+
+
+1. Download python from official site of python
+2. for windows user press windows + x to open the power user menu click command prompt 
+3. Run this command in the terminal: python MoodStablizer/first_page.py
+
+
+
+
 ### *Installation*
 
 Install the following packages:
@@ -83,9 +99,6 @@ collecting the data for machine learning:
 2. run this command in the terminal : mkdir data
 3. extract  the data inside folder data
 
-### How to run this Application
-
-1. Run this command in the terminal: python MoodStablizer/first_page.py
 
 ### Run the tests
 

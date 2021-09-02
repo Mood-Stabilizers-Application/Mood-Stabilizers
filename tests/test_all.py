@@ -4,12 +4,37 @@ from MoodStablizer.CamDetect import time
 import cv2
 import datetime
 from MoodStablizer.machine_test import *
+import numpy as np
+
 
 
 def test_play_sound():
     excepted = 'sound/music/Sad/Sad.wav'
     actual = paly_sound_path('Sad')
     assert excepted == actual
+
+
+def test_convert_image():
+    x = cv2.imread('data/images.jpeg')
+    gray_frame = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
+    excepted=x
+    actual=gray_frame
+    assert excepted == actual
+
+def test_resize_image():
+    x=cv2.imread('data/images.jpeg')
+    gray_frame = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
+    cropped_img = np.expand_dims(
+                np.expand_dims(cv2.resize(gray_frame, (48, 48)), -1), 0
+            )
+    actual=cropped_img
+    excepted=x
+    assert excepted == actual
+
+            
+
+
+
 
 
 # def test_cam():
