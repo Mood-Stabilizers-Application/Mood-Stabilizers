@@ -12,12 +12,12 @@ def test_play_sound():
     assert excepted == actual
 
 
-def test_cam():
-    cap = cv2.VideoCapture(0)
-    excepted = True
-    actual = cap.isOpened()
-    actual = True
-    assert excepted == actual
+# def test_cam():
+#     cap = cv2.VideoCapture(0)
+#     excepted = True
+#     actual = cap.isOpened()
+#     actual = True
+#     assert excepted == actual
 
 
 def test_time():
@@ -28,14 +28,14 @@ def test_time():
 
 # def test_images():
 #     excepted = (
-#         'number of train images is:12966 and number of validation images is: 3422')
+#         'number of train images is:28709 and number of validation images is: 3422')
 
 #     actual = images()
 #     assert excepted == actual
 
 
 # def test_model():
-#     excepted = 'dense_1/Softmax:0'
+#     excepted = 'dense_3/Softmax:0'
 
 #     actual = model()
 #     assert excepted == actual
