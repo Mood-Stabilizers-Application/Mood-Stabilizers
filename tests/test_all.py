@@ -1,6 +1,4 @@
-# from MoodStablizer.sound.sound import *
-from sound.sound import *
-
+from MoodStablizer.sound.sound import *
 from MoodStablizer.CamDetect import *
 import cv2
 import datetime
@@ -32,7 +30,7 @@ def test_load_img_mood():
 
 
 def test_play_sound():
-    excepted = 'sound/music/Sad/Sad.wav'
+    excepted = 'MoodStablizer/sound/music/Sad/Sad.wav'
     actual = paly_sound_path('Sad')
     assert excepted == actual
 

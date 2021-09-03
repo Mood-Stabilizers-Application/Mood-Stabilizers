@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from  .sound.sound import play_sound
+from  MoodStablizer.sound.sound import play_sound
 import random
 from .CamDetect import play_cam
 mood_list = ['Angry', 'Disgusted', 'Fearful',
