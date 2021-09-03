@@ -9,7 +9,7 @@ def time():
     time_2 = time_1 + 5
     return time_2
 
-def ma(cropped_img):
+def load_img(cropped_img):
     emotion_model = load_model('MoodStablizer/emotion_model2.h5')
     # change the cropped img to an array the can be predected using the model
     emotion_prediction = emotion_model.predict(cropped_img)
@@ -33,16 +33,16 @@ def play_cam():
     cap = cv2.VideoCapture(0)
     time_2 = time()
     while True:
+        
         ret, frame = cap.read()
-        print(frame)
-        # print(ret) is boolean if it is exist it is True
-        # print(frame) is frame as an array
+
         if not ret:
             break
         #  if ret is not exist(no frame) exit the loop
         bounding_box = cv2.CascadeClassifier(
             "haarcascade_frontalface_default.xml"
         )
+
         #  this is the bounding box around my face
 
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -51,9 +51,6 @@ def play_cam():
         num_faces = bounding_box.detectMultiScale(
             gray_frame, scaleFactor=1.3, minNeighbors=5
         )
-        # print(num_faces)
-        #  return vector of rectangles
-        #  [[275 265 165 165]]
 
         for (x, y, w, h) in num_faces:
             cv2.rectangle(frame, (x, y - 50),
@@ -67,7 +64,7 @@ def play_cam():
                 np.expand_dims(cv2.resize(roi_gray_frame, (48, 48)), -1), 0
             )
  
-            maxindex = ma(cropped_img)
+            maxindex = load_img(cropped_img)
 
             cv2.putText(
                 frame,
@@ -90,18 +87,10 @@ def play_cam():
             return emotion_dict[maxindex]
 
     cap.release()
-    # Closes video file or capturing device.
-    # The method is automatically called by subsequent VideoCapture::open and by VideoCapture destructor.
-
     cv2.destroyAllWindows()
-
     # Removing windows by calling below function
 
 
-def close_cam():
-    cv2.destroyAllWindows()
-    
-# play_cam()
 
 
 
@@ -110,12 +99,3 @@ def close_cam():
 
 
 
-x = cv2.imread('data/images.jpeg')
-# print(x)
-gray_frame = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
-cropped_img = np.expand_dims(
-                np.expand_dims(cv2.resize(gray_frame, (48, 48)), -1), 0
-            )
-            
-print(ma(cropped_img))         
-print(emotion_dict[ma(cropped_img)])   

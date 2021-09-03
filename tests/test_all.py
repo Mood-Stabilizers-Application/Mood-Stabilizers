@@ -1,9 +1,32 @@
-import pygame
-from sound.sound import *
-from MoodStablizer.CamDetect import time
+from MoodStablizer.sound.sound import *
+from MoodStablizer.CamDetect import *
 import cv2
 import datetime
-from MoodStablizer.machine_test import *
+
+
+def test_load_img_index():
+    img = cv2.imread('images.jpeg')
+    gray_frame = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cropped_img = np.expand_dims(
+                    np.expand_dims(cv2.resize(gray_frame, (48, 48)), -1), 0
+                )
+    excepted = 4 
+    actual = load_img(cropped_img)
+    assert excepted == actual
+
+
+
+def test_load_img_mood():
+    img = cv2.imread('images.jpeg')
+    gray_frame = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    cropped_img = np.expand_dims(
+                    np.expand_dims(cv2.resize(gray_frame, (48, 48)), -1), 0
+                )
+    excepted = 'Neutral'
+    index = load_img(cropped_img)
+    actual = emotion_dict[index]
+    assert excepted == actual
+
 
 
 def test_play_sound():
@@ -12,13 +35,6 @@ def test_play_sound():
     assert excepted == actual
 
 
-# def test_cam():
-#     cap = cv2.VideoCapture(0)
-#     excepted = True
-#     actual = cap.isOpened()
-#     actual = True
-#     assert excepted == actual
-
 
 def test_time():
     excepted = datetime.datetime.now().second + 5
@@ -26,16 +42,3 @@ def test_time():
     assert excepted == actual
 
 
-# def test_images():
-#     excepted = (
-#         'number of train images is:28709 and number of validation images is: 3422')
-
-#     actual = images()
-#     assert excepted == actual
-
-
-# def test_model():
-#     excepted = 'dense_3/Softmax:0'
-
-#     actual = model()
-#     assert excepted == actual

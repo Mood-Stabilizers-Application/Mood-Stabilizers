@@ -1,10 +1,10 @@
-from typing import Sized
 import PySimpleGUI as sg
-from sound.sound import play_sound
+from  .sound.sound import play_sound
 import random
-from CamDetect import play_cam, close_cam
+from .CamDetect import play_cam
 mood_list = ['Angry', 'Disgusted', 'Fearful',
              'Happy', 'Neutral', 'Sad', 'Surprised']
+
 after_quit = 'Did you like your experience with Mood Stabilizer App?'
 quit_yes_answer = 'Thank you!'
 quit_no_answer = 'Sorry to hear that!'
@@ -19,10 +19,8 @@ def main_page():
     window = sg.Window('Mood-Stabilizers-App', layout,
                        ttk_theme=ttk_style, size=(700, 400))
     event, values = window.read()
-    print(values)
-    print(event)
+
     if event == 'Start':
-        # pass
         window.close()
         open_window()
     elif event == 'Quit' or event == sg.WIN_CLOSED:
