@@ -1,4 +1,6 @@
-from MoodStablizer.sound.sound import *
+# from MoodStablizer.sound.sound import *
+from sound.sound import *
+
 from MoodStablizer.CamDetect import *
 import cv2
 import datetime
