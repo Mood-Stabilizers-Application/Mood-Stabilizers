@@ -9,12 +9,16 @@ def time():
     time_2 = time_1 + 5
     return time_2
 
-
-def play_cam():
-
+def ma(cropped_img):
     emotion_model = load_model('MoodStablizer/emotion_model2.h5')
+    # change the cropped img to an array the can be predected using the model
+    emotion_prediction = emotion_model.predict(cropped_img)
+    # emotion prediction as a number
+    maxindex = int(np.argmax(emotion_prediction))
+    # max index is the emotion index in emotion_dict
+    return maxindex
 
-    emotion_dict = {
+emotion_dict = {
         0: "Angry",
         1: "Disgusted",
         2: "Fearful",
@@ -23,14 +27,16 @@ def play_cam():
         5: "Sad",
         6: "Surprised",
     }
+
+def play_cam():
+
     cap = cv2.VideoCapture(0)
     time_2 = time()
     while True:
         ret, frame = cap.read()
-
+        print(frame)
         # print(ret) is boolean if it is exist it is True
         # print(frame) is frame as an array
-
         if not ret:
             break
         #  if ret is not exist(no frame) exit the loop
@@ -60,11 +66,9 @@ def play_cam():
             cropped_img = np.expand_dims(
                 np.expand_dims(cv2.resize(roi_gray_frame, (48, 48)), -1), 0
             )
-            # change the cropped img to an array the can be predected using the model
-            emotion_prediction = emotion_model.predict(cropped_img)
-            #  emotion prediction as a number
-            maxindex = int(np.argmax(emotion_prediction))
-            # max index is the emotion index in emotion_dict
+ 
+            maxindex = ma(cropped_img)
+
             cv2.putText(
                 frame,
                 emotion_dict[maxindex],
@@ -96,5 +100,22 @@ def play_cam():
 
 def close_cam():
     cv2.destroyAllWindows()
+    
+# play_cam()
 
 
+
+
+
+
+
+
+x = cv2.imread('data/images.jpeg')
+# print(x)
+gray_frame = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
+cropped_img = np.expand_dims(
+                np.expand_dims(cv2.resize(gray_frame, (48, 48)), -1), 0
+            )
+            
+print(ma(cropped_img))         
+print(emotion_dict[ma(cropped_img)])   
