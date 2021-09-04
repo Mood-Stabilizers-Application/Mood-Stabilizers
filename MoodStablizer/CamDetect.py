@@ -2,12 +2,13 @@ import cv2
 import numpy as np
 from keras.models import load_model
 import datetime
+from MoodStablizer.handel_image import *
+from time_capture import *
+from play_cam import *
 
 
-def time():
-    time_1 = datetime.datetime.now().second
-    time_2 = time_1 + 5
-    return time_2
+time()
+
 
 def load_img(cropped_img):
     emotion_model = load_model('MoodStablizer/emotion_model2.h5')
@@ -18,22 +19,24 @@ def load_img(cropped_img):
     # max index is the emotion index in emotion_dict
     return maxindex
 
+
 emotion_dict = {
-        0: "Angry",
-        1: "Disgusted",
-        2: "Fearful",
-        3: "Happy",
-        4: "Neutral",
-        5: "Sad",
-        6: "Surprised",
-    }
+    0: "Angry",
+    1: "Disgusted",
+    2: "Fearful",
+    3: "Happy",
+    4: "Neutral",
+    5: "Sad",
+    6: "Surprised",
+}
+
 
 def play_cam():
 
     cap = cv2.VideoCapture(0)
     time_2 = time()
     while True:
-        
+
         ret, frame = cap.read()
 
         if not ret:
@@ -63,7 +66,7 @@ def play_cam():
             cropped_img = np.expand_dims(
                 np.expand_dims(cv2.resize(roi_gray_frame, (48, 48)), -1), 0
             )
- 
+
             maxindex = load_img(cropped_img)
 
             cv2.putText(
@@ -89,13 +92,3 @@ def play_cam():
     cap.release()
     cv2.destroyAllWindows()
     # Removing windows by calling below function
-
-
-
-
-
-
-
-
-
-
