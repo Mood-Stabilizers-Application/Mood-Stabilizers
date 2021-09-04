@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 from keras.models import load_model
 import datetime
-from MoodStablizer.handel_image import *
-from time_capture import *
-from play_cam import *
 
 
-time()
+def time():
+    time_1 = datetime.datetime.now().second
+    time_2 = time_1 + 5
+    return time_2
 
 
 def load_img(cropped_img):
